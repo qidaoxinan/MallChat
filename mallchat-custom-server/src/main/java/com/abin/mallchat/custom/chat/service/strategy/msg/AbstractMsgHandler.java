@@ -13,6 +13,10 @@ import javax.annotation.PostConstruct;
  */
 public abstract class AbstractMsgHandler {
 
+    /**
+     * 继承类，当Bean被创建并且它的依赖项被注入后，容器会自动调用
+     * getMsgTypeEnum 获取继承类配置的参数
+     */
     @PostConstruct
     private void init() {
         MsgHandlerFactory.register(getMsgTypeEnum().getType(), this);
